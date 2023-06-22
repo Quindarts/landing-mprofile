@@ -1,20 +1,84 @@
 .siderbar {
     background-color: rgb(36, 36, 47);
-    @include position(fixed, 0, 0, 0, 2);
-    @include box(25rem, 100%);
-    ul {
-        margin-top: 6rem;
-        li {
-            a { 
-                padding: 0 3rem 0 3rem;
-                @include text(1.3rem, 600, #8c8c8e,3rem);
-                transition: .5s ease;
-                &:hover{
-                    color: white;
-                    margin-left: 1rem;
+    max-width: 300px;
+    &_fixed {
+        position: fixed;
+        background-color: rgb(36, 36, 47);
+        top: 0;
+        bottom: 0;
+    }
+    .ctrl_open_sidebar {
+        background-color: rgb(36, 36, 47);
+        margin-top: 3rem;
+        animation: setWidth 0.1s ease-in;
+        ul {
+            max-width: 300px;
+            li {
+                a {
+                    padding: 0 3rem 0 3rem;
+                    @include text(1.3rem, 600, #8c8c8e, 3rem);
+                    transition: 0.3s ease;
+                    &:hover {
+                        color: #fcbf08;
+                    }
                 }
             }
-            
         }
-    }  
+    }
+    .ctrl_close_sidebar {
+        display: none;
+        animation: unSetWidth 0.5s ease-in;
+    }
+    .btn_ctrl_sidebar button {
+        background-color: rgb(36, 36, 47);
+        border: none;
+        color: white;
+        cursor: pointer;
+        padding: 5rem 3rem 0 3rem;
+        svg {
+            font-size: 3rem;
+        }
+        &:hover {
+            color: #fcbf08;
+            transition: 0.3s ease-in;
+        }
+    }
+    @keyframes setWidth {
+        0% {
+            width: 0px;
+            opacity: 0;
+        }
+        25% {
+            width: 100px;
+        }
+        50% {
+            width: 150px;
+        }
+        75% {
+            width: 200px;
+        }
+        100% {
+            width: 300px;
+            opacity: 1;
+        }
+    }
+    @keyframes unSetWidth {
+        0% {
+            width: 300px;
+            opacity: 0;
+        }
+        25% {
+            width: 200px;
+        }
+        50% {
+            width: 150px;
+        }
+        75% {
+            width: 100px;
+        }
+        100% {
+            width: 0px;
+            opacity: 1;
+        }
+    }
 }

@@ -1,9 +1,23 @@
-.main-layout{
-    background-color:rgba(30,30,40,.88);
-    width: auto;
+.main_layout {
+    background-color: rgba(30, 30, 40, 0.88);
+    width: 100%;
+    padding: 0 3rem 0 3rem;
     height: auto;
-    padding: 1.5rem;
     color: white;
     font-size: 1.8rem;
     display: flex;
+    .outlet_layout {
+        width: calc(100vw- 700px);
+    }
+}
+.swiper-button-next::after,.swiper-button-prev::after{
+    color: #fcbf08;
+    background: white;
+    padding: 17px 20px 17px 20px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-radius: 50%;
+}
+.swiper-pagination-bullet-active{
+    background  : #fcbf08;
 }

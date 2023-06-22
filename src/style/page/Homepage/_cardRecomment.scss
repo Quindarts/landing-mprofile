@@ -1,0 +1,54 @@
+.card_cmtr {
+    width: 100%;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    background-color: #2c2c36;
+    align-items: center;
+    position: relative; 
+
+    &_avt {
+        position: absolute;
+        width: 10rem;
+        height: 10rem;
+        right: 4rem;
+        top: 1rem;
+        img {
+            border-radius: 50%;
+            z-index: 99;
+        }
+    }
+
+    &_box {
+        padding: 3rem;
+        line-height: 3rem;
+        .cmtr_box {
+            &_name {
+                color: white;
+                font-weight: 600;
+            }
+            &_hint {
+                color: grey;
+                margin-bottom: 3rem;
+            }
+            &_desc {
+                color: grey;
+                margin-bottom: 3rem;
+                max-width: 80%;
+            }
+            &_ratings {
+                background-color: black;
+                padding: 1rem 2rem 1rem 2rem;
+                width: 15rem;
+                border-radius: 20px;
+                display: flex;
+                justify-content: center;
+                gap: 0.5rem;
+                font-size: 1.5rem;
+                svg {
+                    color: #fcbf08;
+                }
+            }
+        }
+    }
+}
