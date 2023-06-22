@@ -1,0 +1,160 @@
+.aside {
+    background: linear-gradient(
+        159deg,
+        rgba(37, 37, 50, 0.98) 0,
+        rgba(35, 35, 45, 0.98) 100%
+    );
+    box-sizing: border-box;
+    width: 29rem;
+    &_fixed {
+        position: fixed;
+    }
+    .header {
+        padding: 3rem;
+        @include box(100%, 23.5rem);
+
+        &-avt {
+            @include box(9rem, 9rem);
+            border-radius: 50%;
+            margin: auto;
+            margin-bottom: 1.5rem;
+            position: relative;
+            img {
+                @include box(100%, 100%);
+                position: absolute;
+                border-radius: 50%;
+            }
+            .status {
+                &::before {
+                    content: "";
+                    position: absolute;
+                    bottom: -0.1rem;
+                    right: 0.1rem;
+                    @include box(2.3rem, 2.3rem);
+                    animation: border-animation 1s infinite;
+                    background: #fafafc;
+                    border-radius: 50%;
+                    @keyframes border-animation {
+                        0% {
+                            background: #fafafc;
+                        }
+                        25% {
+                            background: #d3d3d5;
+                        }
+                        50% {
+                            background: #c4c4c7;
+                        }
+                        75% {
+                            background: #bab9b9;
+                        }
+                        100% {
+                            background: #bdbdbd;
+                        }
+                    }
+                }
+                &-circle {
+                    background-color: #ffc107;
+                    @include box(1.5rem, 1.5rem);
+                    position: absolute;
+                    bottom: 0.3rem;
+                    right: 0.5rem;
+                    border-radius: 50%;
+                    transition: 0.4s ease-in-out;
+                }
+            }
+        }
+        &-name {
+            text-align: center;
+            a {
+                @include text(1.8rem, bold, #fafafc);
+            }
+        }
+        &-job {
+            margin-top: 1rem;
+            text-align: center;
+            @include text(1.3rem, 400, #8c8c8e);
+        }
+    }
+    &-middle {
+        padding: 0 1.5rem 0 1.5rem;
+        width: 29rem;
+        background-color: #212529;
+        overflow-y: scroll;
+        max-height: 80vh;
+        transition: 0.3s ease-in;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        @include text(1.5rem, 400, #545454, 3rem);
+        &::-webkit-scrollbar {
+            display: none;
+        }
+        .scrollbar {
+            @include box(100%, calc(100vh - 10rem));
+            .art-table,
+            .art-skillbar {
+                border-bottom: 1px solid #59595b;
+                padding: 1rem 0 1rem 0;
+                ul li {
+                    display: flex;
+                    flex-wrap: wrap;
+                    @include text(1.5rem, 400, #8c8c8e);
+                    span {
+                        display: block;
+                    }
+                }
+            }
+            .art-table ul li {
+                h5 {
+                    width: 60%;
+                }
+            }
+            .art-skillbar {
+                ul li {
+                    margin: 1rem 0 1rem 0;
+                    h5 {
+                        width: 85%;
+                    }
+                }
+            }
+            .bar-item::after {
+                margin: 0.5rem 0 0.5rem 0;
+                display: block;
+                height: 0.2rem;
+                width: 100%;
+                background-color: #ffc107;
+                content: "";
+            }
+            .art-skill {
+                border-bottom: 1px solid #59595b;
+                padding: 1rem 0 1rem 0;
+                svg {
+                    color: #ffc107;
+                    font-weight: bold;
+                    margin-right: 0.5rem;
+                }
+            }
+            .art-cv {
+                padding: 2rem 0;
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                a {
+                    color: gray;
+                    font-weight: 500;
+                }
+                svg {
+                    color: gray;
+                    font-size: 2rem;
+                }
+                &:hover a,
+                &:hover svg {
+                    text-shadow: 2px 2px 2px gray;
+                    color: white;
+                    transition: 0.3s ease-in;
+                }
+            }
+        }
+    }
+    &-bottom {
+    }
+}

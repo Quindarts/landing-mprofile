@@ -1,20 +1,20 @@
 import React, { Fragment } from "react";
 import { Outlet } from "react-router-dom";
-import Footer from "./Footer";
-import Header from "./Header";
+import Aside from "./Aside";
+// import Footer from "./Footer";
+// import Header from "./Header";
 import Sidebar from "./Siderbar";
 
 function MainLayout() {
     return (
         <Fragment>
-            <Sidebar />
-            <Header />
-            <div className="main-layout">
-                
-                MainLayout
-                <Outlet />
+            <div className="main_layout">   
+                <Aside />
+                <div className="outlet_layout">
+                    <Outlet />
+                </div>
+                <Sidebar />
             </div>
-            <Footer />
         </Fragment>
     );
 }

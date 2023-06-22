@@ -1,0 +1,112 @@
+#main_home {
+    padding: 3rem;
+    @include box(calc(100vw - 60rem), 100%);
+    .slide {
+        width: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        position: relative;
+        padding: 1.5rem;
+        opacity: 0.9;
+        @keyframes hoverslide {
+            0% {
+                width: 0;
+            }
+            100% {
+                width: 100%;
+            }
+        }
+        .bg_slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            filter: blur(3px);
+            object-fit: center;
+        }
+        &-content {
+            padding: 5rem;
+            width: 100%;
+            min-height: 40rem;
+            display: flex;
+            background: rgba($color: #242424, $alpha: 0.6);
+            position: relative;
+            margin: 0 auto;
+            transition: 10s;
+            border-radius: 0.5rem;
+            @include text(2.4rem, bold, white);
+            z-index: 1;
+            &_desc {
+                margin: 3rem 0;
+                font-weight: 500;
+                display: flex;
+                align-items: center;
+                span {
+                    color: #fcbf08;
+                }
+                .typing-animation {
+                    overflow: hidden;
+                    white-space: nowrap;
+                    border-right: 2px solid #fcbf08;
+                    animation: typing 4s steps(60) infinite;
+                }
+
+                @keyframes typing {
+                    from {
+                        width: 0;
+                    }
+                    to {
+                        width: 60%;
+                    }
+                }
+            }
+            button {
+                padding: 2rem 5rem;
+                background: #fcbf08;
+                color: black;
+                font-weight: bold;
+                border: 2px solid #fcbf08;
+                cursor: pointer;
+                &:hover {
+                    background: #f0bb1e;
+                }
+            }
+        }
+        .big_avt {
+            flex: 1;
+            height: 100%;
+
+            img {
+                width: 50rem;
+                height: 50rem;
+                position: absolute;
+                bottom: 0;
+                right: 10rem;
+            }
+        }
+    }
+    .time_skill {
+        margin: 3rem 0 0 0;
+        width: 100%;
+    }
+    .home_content {
+        margin: 3rem 0 3rem 0;
+        .card_data {
+            &_services,
+            &_price {
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 3rem;
+            }
+        }
+    }
+    h1 {
+        margin: 3rem 0 3rem 0;
+    }
+    .card_data_recoment {
+        width: 100%;
+    }
+}
