@@ -1,14 +1,12 @@
 import React, { Fragment } from "react";
 import { Outlet } from "react-router-dom";
 import Aside from "./Aside";
-// import Footer from "./Footer";
-// import Header from "./Header";
 import Sidebar from "./Siderbar";
 
 function MainLayout() {
     return (
         <Fragment>
-            <div className="main_layout">   
+            <div className="main_layout">
                 <Aside />
                 <div className="outlet_layout">
                     <Outlet />
@@ -18,5 +16,4 @@ function MainLayout() {
         </Fragment>
     );
 }
-
 export default MainLayout;
